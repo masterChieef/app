@@ -55,9 +55,9 @@
           <div class="column">
             <b-field>
               <p class="control">
-                <button class="button is-info">
-                  Registrarse
-                </button>
+                  <button class="button is-info">
+                    Registrarse
+                  </button>
               </p>
             </b-field>
           </div>
