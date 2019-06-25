@@ -3,13 +3,14 @@
     <br>
     <section>
       <b-field>
-        Que palabra en quichua es <strong>{{ item2 }}</strong>
+        Que palabra en kichwa es <strong>{{ item2 }}</strong>
       </b-field>
       <b-checkbox-button 
         v-model="checkbox"
       >
         {{ item1 }}
       </b-checkbox-button>
+      
       <b-checkbox-button
         v-model="checkbox1"
       >
@@ -55,7 +56,7 @@ export default {
     let resp= this.item1.includes(hola);
     console.log(resp)
     let alert= resp== true? Notification.open({
-      message:'felicitaciones has hacertado!',
+      message:'felicitaciones has acertado!',
       type: 'is-success'
       }) : Notification.open({
         message:'has fallado intenta de nuevo',type: 'is-danger',

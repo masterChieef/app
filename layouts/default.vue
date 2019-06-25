@@ -11,8 +11,8 @@
           href="/"
         >
           <img
-            src="~assets/buefy.png"
-            alt="Buefy"
+            src="~assets/logotipo.png"
+            alt="Ecualingo"
             height="28"
           >
         </a>
