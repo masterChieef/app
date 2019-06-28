@@ -1,49 +1,60 @@
 <template>
-  <div>
-    <br>
-    <section>
-      <b-field>
-        Que palabra en kichwa es <strong>{{ item2 }}</strong>
-      </b-field>
-      <b-checkbox-button 
+  <div class="section">
+    <b-message title="Instrucción" type="is-info">
+        Este es un juego de opción multiple donde deberas cojer la respuesta correcta.
+    </b-message>
+    <h3 class="title">Escoge la respuesta correcta</h3>
+    <div class="columns">
+      <div class="column">
+        <p>
+          Que palabra en kichwa es <strong>{{ item2 }}:</strong>
+        </p>
+      </div>
+    </div>  
+    <div class="field">
+      <b-radio
         v-model="checkbox"
       >
         {{ item1 }}
-      </b-checkbox-button>
-      
-      <b-checkbox-button
+      </b-radio>
+    </div>
+    <div class="field">
+      <b-radio
         v-model="checkbox1"
       >
         {{ item3 }}
-      </b-checkbox-button>
-      <b-checkbox-button
+      </b-radio>
+    </div>
+    <div class="field">
+      <b-radio
         v-model="checkbox2"
       >
         {{ item4 }}
-      </b-checkbox-button>
-    </section>
-    <br>
-    <p class="control">
-      <button class="button is-primary " @click="comprobar">
-        Comprobar
-      </button>
-    </p>
+      </b-radio>
+    </div>
+  <div class="buttons">
+    <button class="button is-primary" @click="comprobar">
+      Comprobar
+    </button>
+  </div>
   </div>
 </template>
 <script>
 import { NotificationProgrammatic as Notification } from 'buefy/dist/components/notification'
+import { Toast } from 'buefy/dist/components/toast'
+
 export default {
- data (){
+ data (){   
    return {
       met: "",
       checkbox: true,
       checkbox1: true,
       checkbox2: true,
       checkbox3: true,
-      item1:'mama',
+      item1:'Tierra',
       item2:'pacha',
-      item3:'papa',
-      item4:'niño'
+      item3:'Papá',
+      item4:'Niño',
     }
  },
  methods:{
@@ -54,13 +65,14 @@ export default {
    comprobar(){
     let hola= this.checkbox==true? this.item2 : this.item1
     let resp= this.item1.includes(hola);
-    console.log(resp)
-    let alert= resp== true? Notification.open({
+    let toast= resp== true? this.$toast.open({
       message:'felicitaciones has acertado!',
       type: 'is-success'
-      }) : Notification.open({
-        message:'has fallado intenta de nuevo',type: 'is-danger',
-        hasIcon: true
+      }) : this.$toast.open({
+        message:'has fallado intenta de nuevo',
+        type: 'is-danger',
+        hasIcon: true,
+        position: 'is-bottom'
       })
     return null
    },

@@ -30,38 +30,12 @@
         title="Registro"
         icon="account-group"
       >
-        <b-field label="Nombre">
-          <b-input
-            placeholder="Ingrese Nombre Usuario"
-          />
-        </b-field>
-        <b-field label="Contraseña">
-          <b-input
-            type="password"
-            placeholder="Contraseña"
-          />
-        </b-field>
-
-        <div class="columns">
-          <div class="column">
-            <b-field>
-              <p class="control">
-                <button class="button is-success">
-                  Ingresar
-                </button>
-              </p>
-            </b-field>
-          </div>
-          <div class="column">
-            <b-field>
-              <p class="control">
-                  <button class="button is-info">
-                    Registrarse
-                  </button>
-              </p>
-            </b-field>
-          </div>
-        </div>
+        <b-button type="is-info" class="button is-primary is-medium">
+          Ingresar
+        </b-button>
+        <b-button type="is-success" class="button is-primary is-medium">
+          Registrarse
+        </b-button>
       </card>
 
     </div>
