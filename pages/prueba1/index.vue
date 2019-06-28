@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div class="section">
     <b-message title="Instrucción" type="is-info">
         Este es un juego de opción multiple donde deberas cojer la respuesta correcta.
@@ -28,29 +27,6 @@
     </div>
     <div class="field">
       <b-radio
-=======
-  <div>
-    <br>
-    <section>
-      <b-field>
-        Que palabra en kichwa es <strong>{{ item2 }}</strong>
-      </b-field>
-      <b-checkbox-button
-        @click="ocultar1" 
-        v-model="checkbox"
-      >
-        {{ item1 }}
-      </b-checkbox-button>
-      
-      <b-checkbox-button
-        @click="ocultar2"
-        v-model="checkbox1"
-      >
-        {{ item3 }}
-      </b-checkbox-button>
-      <b-checkbox-button
-        @click="ocultar3"
->>>>>>> bea96e4240d7ba43edf043def749c66e00036ab5
         v-model="checkbox2"
       >
         {{ item4 }}
