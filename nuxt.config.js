@@ -4,9 +4,6 @@ module.exports = {
   /*
   ** Headers of the page
   */
-  router: {
-    base: '/vuejs-2-series/'
-  },
   head: {
     title: process.env.npm_package_name || '',
     meta: [
