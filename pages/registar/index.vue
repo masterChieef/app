@@ -45,7 +45,7 @@
 </template>
 <script>
 export default {
-  
+  //window.location.pathname;
 }
 </script>
 
