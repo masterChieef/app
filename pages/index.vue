@@ -30,26 +30,32 @@
         title="Registro"
         icon="account-group"
       >
-        <b-button type="is-info" class="button is-primary is-medium">
+        <b-button
+          type="is-info"
+          class="button is-primary is-medium"
+        >
           Ingresar
         </b-button>
-        <b-button type="is-success" class="button is-primary is-medium">
-          Registrarse
-        </b-button>
+        <nuxt-link to="/registar">  
+          <b-button
+            type="is-success"
+            class="button is-primary is-medium"
+          >
+            Registrarse
+          </b-button>
+        </nuxt-link>  
       </card>
-
     </div>
   </section>
 </template>
 
 <script>
 import Card from '~/components/Card'
-
 export default {
   name: 'HomePage',
 
   components: {
-    Card
-  }
+    Card,
+  },   
 }
 </script>

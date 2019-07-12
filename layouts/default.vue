@@ -66,6 +66,11 @@ export default {
           title: 'prueba1',
           icon: 'lightbulb',
           to: { name: 'prueba1'}
+        },
+        {
+          title: 'prueba2',
+          icon: 'lightbulb',
+          to: { name: 'prueba2'}
         }
       ]
     }
