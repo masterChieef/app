@@ -46,7 +46,6 @@
           Registrarse
         </b-button>
       </card>
-
     </div>
   </section>
 </template>
@@ -55,7 +54,6 @@
 import LoginModal from './login'
 import RegisterModal from './register'
 import Card from '~/components/Card'
-
 export default {
   name: 'HomePage',
 
