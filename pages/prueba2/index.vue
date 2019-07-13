@@ -33,9 +33,18 @@
       </b-checkbox-button>
     </div>
   <div class="buttons">
-    <button class="button is-primary" @click="comprobar">
+    <button
+      class="button is-success"
+      @click="comprobar"
+    >
       Comprobar
     </button>
+    <nuxt-link
+      class="button"
+      to="/prueba1"
+    >
+      Siguiente
+    </nuxt-link>
   </div>
   </div>
 </template>

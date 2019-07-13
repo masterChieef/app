@@ -61,11 +61,6 @@ export default {
           title: 'Home',
           icon: 'home',
           to: { name: 'index' }
-        },
-        {
-          title: 'prueba1',
-          icon: 'lightbulb',
-          to: { name: 'prueba1'}
         }
       ]
     }
