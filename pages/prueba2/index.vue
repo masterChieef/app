@@ -1,8 +1,10 @@
 <template>
   <div class="section">
-    <b-message title="Instrucción" type="is-info">
-        Este es un juego de opción multiple donde deberas cojer la respuesta correcta.
-    </b-message>
+    <div class="columns">
+      <div class="column is-four-fifths is-offset-1">
+        <progress class="progress is-warning" value="40" max="100" />
+      </div>
+    </div>
     <h3 class="title">Escoge la respuesta correcta</h3>
     <div class="columns">
       <div class="column">
@@ -12,25 +14,25 @@
       </div>
     </div>  
     <div class="field">
-      <b-checkbox-button
+      <b-radio
         v-model="checkbox"
       >
         {{ item1 }}
-      </b-checkbox-button>
+      </b-radio>
     </div>
     <div class="field">
-      <b-checkbox-button
+      <b-radio
         v-model="checkbox1"
       >
         {{ item3 }}
-      </b-checkbox-button>
+      </b-radio>
     </div>
     <div class="field">
-      <b-checkbox-button
+      <b-radio
         v-model="checkbox2"
       >
         {{ item4 }}
-      </b-checkbox-button>
+      </b-radio>
     </div>
   <div class="buttons">
     <button
@@ -41,7 +43,7 @@
     </button>
     <nuxt-link
       class="button"
-      to="/prueba1"
+      to="/prueba3"
     >
       Siguiente
     </nuxt-link>
@@ -60,10 +62,10 @@ export default {
       checkbox1: true,
       checkbox2: true,
       checkbox3: true,
-      item1:'Tierra',
-      item2:'pacha',
+      item1:'Abuelo',
+      item2:'Tayta',
       item3:'Papá',
-      item4:'Niño',
+      item4:'Agua',
     }
  },
  methods:{

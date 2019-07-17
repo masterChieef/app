@@ -30,7 +30,7 @@
       <card
         title="Registro"
         icon="account-group"
-      >
+      > 
         <b-button
           type="is-info"
           class="button is-primary"

@@ -2,37 +2,40 @@
   <div class="section">
     <div class="columns">
       <div class="column is-four-fifths is-offset-1">
-        <progress class="progress is-warning" value="20" max="100" />
+        <progress class="progress is-warning" value="100" max="100" />
       </div>
     </div>
-    <h3 class="title">Escoge la respuesta correcta</h3>
+    <h3 class="title">Escoge la palabra que falta</h3>
     <div class="columns">
       <div class="column">
         <p>
-          Que palabra en kichwa es <strong>{{ item2 }}:</strong>
+          Ñam tayta ____________ qispiramunña.
         </p>
       </div>
     </div>  
     <div class="field">
-      <b-radio
+      <b-checkbox-button
         v-model="checkbox"
       >
+        <b-icon icon="pentagon-outline"/>
         {{ item1 }}
-      </b-radio>
+      </b-checkbox-button>
     </div>
     <div class="field">
-      <b-radio
+      <b-checkbox-button
         v-model="checkbox1"
       >
+        <b-icon icon="triangle-outline"/>
         {{ item3 }}
-      </b-radio>
+      </b-checkbox-button>
     </div>
     <div class="field">
-      <b-radio
+      <b-checkbox-button
         v-model="checkbox2"
       >
+        <b-icon icon="square-outline"/>
         {{ item4 }}
-      </b-radio>
+      </b-checkbox-button>
     </div>
   <div class="buttons">
     <button
@@ -43,13 +46,13 @@
     </button>
     <nuxt-link
       class="button"
-      to="/prueba2"
+      to="/prueba1"
     >
       Siguiente
     </nuxt-link>
   </div>
   <b-message title="Instrucción" type="is-info">
-    Este es un juego de opción multiple donde deberas cojer la respuesta correcta.
+    Este es un juego en donde deveras completar la oración con la palabra correcta.
   </b-message>
   </div>
 </template>
@@ -65,10 +68,9 @@ export default {
       checkbox1: true,
       checkbox2: true,
       checkbox3: true,
-      item1:'Tierra',
-      item2:'pacha',
-      item3:'Papá',
-      item4:'Niño',
+      item1:'inti',
+      item3:'yaku',
+      item4:'warmi',
     }
  },
  methods:{
