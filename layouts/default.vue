@@ -11,7 +11,7 @@
           href="/"
         >
           <img
-            src="~assets/logotipo.png"
+            src="~assets/Ecualingo.png"
             alt="Ecualingo"
             height="28"
           >

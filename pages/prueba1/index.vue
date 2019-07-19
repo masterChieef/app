@@ -41,7 +41,9 @@
     >
       Comprobar
     </button>
+    <button v-if="checkbox" class="button" disabled>Siguiente</button>
     <nuxt-link
+      v-else
       class="button"
       to="/prueba2"
     >
