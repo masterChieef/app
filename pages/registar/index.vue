@@ -17,7 +17,6 @@
           <b-field label="Ingrese el Email">
             <b-input
               type="email"
-              :value="email"
               placeholder="Tu email"
               required
             />
@@ -25,7 +24,6 @@
           <b-field label="Ingresa Password">
             <b-input
               type="password"
-              :value="password"
               password-reveal
               placeholder="Your password"
               required

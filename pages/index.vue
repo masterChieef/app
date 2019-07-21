@@ -1,10 +1,14 @@
 <template>
   <section class="section">
-    <b-notification aria-close-label="Close notification">
-        Ecualingo un juego para aprender lenguas nativas del Ecuador
-    </b-notification>
 
     <div class="columns is-mobile">
+
+      <card
+        title="Información"
+        icon="information"
+      >
+        Ecualingo un juego para aprender lenguas nativas del Ecuador
+      </card>
 
       <card
         title="Prueba Gratis"
@@ -21,14 +25,7 @@
       </card>
 
       <card
-        title="Responsive"
-        icon="cellphone-link"
-      >
-        <b class="has-text-grey">Every</b> component is responsive
-      </card>
-
-      <card
-        title="Registro"
+        title="¡Crea un perfil para guardar tu progreso!"
         icon="account-group"
       > 
         <b-button

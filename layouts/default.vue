@@ -16,12 +16,6 @@
             height="28"
           >
         </a>
-
-        <div class="navbar-burger">
-          <span />
-          <span />
-          <span />
-        </div>
       </div>
     </nav>
 
@@ -42,13 +36,27 @@
             </nuxt-link>
           </li>
         </ul>
+        <p class="menu-label is-hidden-touch">Juegos</p>
+        <ul class="menu-list">
+          <li
+            v-for="(item, key) of juegos"
+            :key="key"
+          >
+            <nuxt-link
+              :to="item.to"
+              exact-active-class="is-active"
+            >
+              <b-icon :icon="item.icon" /> {{ item.title }}
+            </nuxt-link>
+          </li>
+        </ul>
       </aside>
-
       <div class="container column is-10">
         <nuxt />
       </div>
 
     </section>
+    
   </div>
 </template>
 
@@ -61,7 +69,14 @@ export default {
           title: 'Home',
           icon: 'home',
           to: { name: 'index' }
-        }
+        },
+      ],
+      juegos: [
+        {
+          title: 'Aprender',
+          icon: 'google-translate',
+          to: { name: 'juegos' }
+        },
       ]
     }
   }

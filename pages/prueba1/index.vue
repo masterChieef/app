@@ -9,47 +9,67 @@
     <div class="columns">
       <div class="column">
         <p>
-          Que palabra en kichwa es <strong>{{ item2 }}:</strong>
+          Que palabra en kichwa es <strong>{{ item1 }}:</strong>
         </p>
       </div>
     </div>  
-    <div class="field">
-      <b-radio
-        v-model="checkbox"
-      >
-        {{ item1 }}
-      </b-radio>
-    </div>
-    <div class="field">
-      <b-radio
-        v-model="checkbox1"
-      >
-        {{ item3 }}
-      </b-radio>
-    </div>
-    <div class="field">
-      <b-radio
-        v-model="checkbox2"
-      >
-        {{ item4 }}
-      </b-radio>
-    </div>
+    <section>
+      <div class="field">
+        <b-radio
+          v-model="radio"
+          :native-value='true'
+        >
+            {{ item2 }}
+        </b-radio>
+      </div>
+      <div class="field">
+        <b-radio
+          v-model="radio"
+          :native-value='false'
+        >
+            {{ item3 }}
+        </b-radio>
+      </div>
+      <div class="field">
+        <b-radio
+          v-model="radio"
+          :native-value='null'
+        >
+            {{ item4 }}
+        </b-radio>
+      </div>
+    </section>
   <div class="buttons">
     <button
+      v-if="!radio"
       class="button is-success"
       @click="comprobar"
     >
       Comprobar
     </button>
-    <button v-if="checkbox" class="button" disabled>Siguiente</button>
     <nuxt-link
-      v-else
+      v-if="radio"
       class="button"
       to="/prueba2"
     >
       Siguiente
     </nuxt-link>
   </div>
+  <b-collapse :open="false" aria-id="ver">
+    <button
+      v-if="!radio"
+      class="button is-danger"
+      slot="trigger"
+      aria-controls="ver"
+    >
+      Ver Respuesta
+    </button>
+    <div class="notification">
+      <div class="content">
+        <p>Pacha: Tierra</p>
+      </div>
+    </div>
+  </b-collapse><br>
   <b-message title="Instrucción" type="is-info">
     Este es un juego de opción multiple donde deberas cojer la respuesta correcta.
   </b-message>
@@ -62,45 +82,27 @@ import { Toast } from 'buefy/dist/components/toast'
 export default {
  data (){   
    return {
-      met: "",
-      checkbox: true,
-      checkbox1: true,
-      checkbox2: true,
-      checkbox3: true,
-      item1:'Tierra',
-      item2:'pacha',
+      radio: '',
+      item1:'pacha',
+      item2:'Tierra',
       item3:'Papá',
       item4:'Niño',
     }
  },
  methods:{
-   verda(){
-     let f = this.met=="aa"
-     return f
-   },
    comprobar(){
-    let hola= this.checkbox==true? this.item2 : this.item1
+    let hola= this.radio==true ? this.item2 : this.item1
     let resp= this.item1.includes(hola);
-    let toast= resp== true? this.$toast.open({
+    let toast= resp== false ? this.$toast.open({
       message:'felicitaciones has acertado!',
       type: 'is-success'
       }) : this.$toast.open({
         message:'has fallado intenta de nuevo',
         type: 'is-danger',
-        hasIcon: true,
         position: 'is-bottom'
       })
     return null
    },
-   ocultar1(){
-     return !!this.checkbox==false? true : false 
-   },
-   ocultar2(){
-     return !!this.checkbox1==false? true : false 
-   },
-   ocultar3(){
-     return !!this.checkbox2==false? true : false
-   }
  }
 }
 </script>
