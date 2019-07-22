@@ -15,21 +15,24 @@
     </div>  
     <div class="field">
       <b-radio
-        v-model="checkbox"
+        v-model="radio"
+        :native-value='false'
       >
         {{ item1 }}
       </b-radio>
     </div>
     <div class="field">
       <b-radio
-        v-model="checkbox1"
+        v-model="radio"
+        :native-value='true'
       >
         {{ item3 }}
       </b-radio>
     </div>
     <div class="field">
       <b-radio
-        v-model="checkbox2"
+        v-model="radio"
+        :native-value='null'
       >
         {{ item4 }}
       </b-radio>
@@ -57,11 +60,7 @@ import { Toast } from 'buefy/dist/components/toast'
 export default {
  data (){   
    return {
-      met: "",
-      checkbox: true,
-      checkbox1: true,
-      checkbox2: true,
-      checkbox3: true,
+      radio:'',
       item1:'Abuelo',
       item2:'Tayta',
       item3:'Papá',
@@ -69,33 +68,19 @@ export default {
     }
  },
  methods:{
-   verda(){
-     let f = this.met=="aa"
-     return f
-   },
    comprobar(){
-    let hola= this.checkbox==true? this.item2 : this.item1
+    let hola= this.radio==true? this.item2 : this.item1
     let resp= this.item1.includes(hola);
-    let toast= resp== true? this.$toast.open({
+    let toast= resp== false? this.$toast.open({
       message:'felicitaciones has acertado!',
       type: 'is-success'
       }) : this.$toast.open({
         message:'has fallado intenta de nuevo',
         type: 'is-danger',
-        hasIcon: true,
         position: 'is-bottom'
       })
     return null
    },
-   ocultar1(){
-     return !!this.checkbox==false? true : false 
-   },
-   ocultar2(){
-     return !!this.checkbox1==false? true : false 
-   },
-   ocultar3(){
-     return !!this.checkbox2==false? true : false
-   }
  }
 }
 </script>

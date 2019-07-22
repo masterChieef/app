@@ -15,7 +15,7 @@
     </div>  
     <div class="field">
       <b-checkbox-button
-        v-model="checkbox"
+        v-model="checkbox1"
       >
         <b-icon icon="numeric-1-box-outline"/>
         {{ item1 }}
@@ -23,7 +23,7 @@
     </div>
     <div class="field">
       <b-checkbox-button
-        v-model="checkbox1"
+        v-model="checkbox"
       >
         <b-icon icon="numeric-2-box-outline"/>
         {{ item3 }}
@@ -63,7 +63,6 @@ import { Toast } from 'buefy/dist/components/toast'
 export default {
  data (){   
    return {
-      met: "",
       checkbox: true,
       checkbox1: true,
       checkbox2: true,
@@ -74,10 +73,6 @@ export default {
     }
  },
  methods:{
-   verda(){
-     let f = this.met=="aa"
-     return f
-   },
    comprobar(){
     let hola= this.checkbox==true? this.item2 : this.item1
     let resp= this.item1.includes(hola);
@@ -92,15 +87,6 @@ export default {
       })
     return null
    },
-   ocultar1(){
-     return !!this.checkbox==false? true : false 
-   },
-   ocultar2(){
-     return !!this.checkbox1==false? true : false 
-   },
-   ocultar3(){
-     return !!this.checkbox2==false? true : false
-   }
  }
 }
 </script>
