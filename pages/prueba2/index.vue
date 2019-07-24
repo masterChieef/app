@@ -39,18 +39,35 @@
     </div>
   <div class="buttons">
     <button
+      v-if="!radio"
       class="button is-success"
       @click="comprobar"
     >
       Comprobar
     </button>
     <nuxt-link
+      v-if="radio"
       class="button"
       to="/prueba3"
     >
       Siguiente
     </nuxt-link>
   </div>
+  <b-collapse :open="false" aria-id="ver">
+    <button
+      v-if="!radio"
+      class="button is-danger"
+      slot="trigger"
+      aria-controls="ver"
+    >
+      Ver Respuesta
+    </button>
+    <div class="notification">
+      <div class="content">
+        <p>{{ item2 }}: {{item3}}</p>
+      </div>
+    </div>
+  </b-collapse><br>
   </div>
 </template>
 <script>

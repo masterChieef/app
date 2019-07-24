@@ -18,7 +18,7 @@
         v-model="checkbox1"
       >
         <b-icon icon="numeric-1-box-outline"/>
-        {{ item1 }}
+        {{ item2 }}
       </b-checkbox-button>
     </div>
     <div class="field">
@@ -39,18 +39,35 @@
     </div>
   <div class="buttons">
     <button
+      v-if="checkbox"
       class="button is-success"
       @click="comprobar"
     >
       Comprobar
     </button>
     <nuxt-link
+      v-if="!checkbox"
       class="button"
       to="/prueba4"
     >
       Siguiente
     </nuxt-link>
   </div>
+  <b-collapse :open="false" aria-id="ver">
+    <button
+      v-if="checkbox"
+      class="button is-danger"
+      slot="trigger"
+      aria-controls="ver"
+    >
+      Ver Respuesta
+    </button>
+    <div class="notification">
+      <div class="content">
+        <p>{{item1}}: {{ item3 }}</p>
+      </div>
+    </div>
+  </b-collapse><br>
   <b-message title="Instrucción" type="is-info">
     Este es un juego en donde deveras escojer la oración correcta.
   </b-message>
@@ -67,7 +84,8 @@ export default {
       checkbox1: true,
       checkbox2: true,
       checkbox3: true,
-      item1:'Te quiero mucho.',
+      item1:'LLamkaqmi risaq',
+      item2:'Te quiero mucho.',
       item3:' Me voy a trabajar.',
       item4:'Mi papá se fue de viaje.',
     }

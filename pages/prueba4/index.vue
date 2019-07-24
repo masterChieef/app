@@ -9,21 +9,21 @@
     <div class="columns">
       <div class="column">
         <p>
-          Mamaiqui, tataiquiri?.
+          {{ item1 }}
         </p>
       </div>
     </div>  
     <div class="field">
       <b-checkbox-button
-        v-model="checkbox"
+        v-model="checkbox1"
       >
         <b-icon icon="numeric-1-box-outline"/>
-        {{ item1 }}
+        {{ item2 }}
       </b-checkbox-button>
     </div>
     <div class="field">
       <b-checkbox-button
-        v-model="checkbox1"
+        v-model="checkbox2"
       >
         <b-icon icon="numeric-2-box-outline"/>
         {{ item3 }}
@@ -31,7 +31,7 @@
     </div>
     <div class="field">
       <b-checkbox-button
-        v-model="checkbox2"
+        v-model="checkbox"
       >
         <b-icon icon="numeric-3-box-outline"/>
         {{ item4 }}
@@ -39,18 +39,35 @@
     </div>
   <div class="buttons">
     <button
+      v-if="checkbox"
       class="button is-success"
       @click="comprobar"
     >
       Comprobar
     </button>
     <nuxt-link
+      v-if="!checkbox"
       class="button"
       to="/prueba5"
     >
       Siguiente
     </nuxt-link>
   </div>
+  <b-collapse :open="false" aria-id="ver">
+    <button
+      v-if="checkbox"
+      class="button is-danger"
+      slot="trigger"
+      aria-controls="ver"
+    >
+      Ver Respuesta
+    </button>
+    <div class="notification">
+      <div class="content">
+        <p>{{item1}}: {{ item4 }}</p>
+      </div>
+    </div>
+  </b-collapse>
   </div>
 </template>
 <script>
@@ -60,21 +77,16 @@ import { Toast } from 'buefy/dist/components/toast'
 export default {
  data (){   
    return {
-      met: "",
       checkbox: true,
       checkbox1: true,
       checkbox2: true,
-      checkbox3: true,
-      item1:'Quieres comer?',
+      item1:'Mamaiqui, tataiquiri?',
+      item2:'Quieres comer?',
       item3:'Cuántos años tienes?',
       item4:'Y tu madre y tu padre?',
     }
  },
  methods:{
-   verda(){
-     let f = this.met=="aa"
-     return f
-   },
    comprobar(){
     let hola= this.checkbox==true? this.item2 : this.item1
     let resp= this.item1.includes(hola);
@@ -89,15 +101,6 @@ export default {
       })
     return null
    },
-   ocultar1(){
-     return !!this.checkbox==false? true : false 
-   },
-   ocultar2(){
-     return !!this.checkbox1==false? true : false 
-   },
-   ocultar3(){
-     return !!this.checkbox2==false? true : false
-   }
  }
 }
 </script>

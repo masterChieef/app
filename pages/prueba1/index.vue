@@ -50,7 +50,7 @@
     <nuxt-link
       v-if="radio"
       class="button"
-      to="/prueba2"
+      to="/prueba2" 
     >
       Siguiente
     </nuxt-link>
@@ -71,7 +71,7 @@
     </div>
   </b-collapse><br>
   <b-message title="Instrucción" type="is-info">
-    Este es un juego de opción multiple donde deberas cojer la respuesta correcta.
+    Este es un juego de opción múltiple donde deveras coger la respuesta correcta.
   </b-message>
   </div>
 </template>

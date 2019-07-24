@@ -35,7 +35,7 @@
           <nuxt-link to="/">
             <button class="button" type="button">Cancelar</button>
           </nuxt-link>
-          <button class="button is-primary">Registrar</button>
+          <button class="button is-primary">Crear Cuenta</button>
         </footer>
       </div>
     </form>

@@ -38,7 +38,7 @@
       <button
         class="button is-primary"
       >
-        Registrarte
+        Crear Cuenta
       </button>
       <button
         class="button"

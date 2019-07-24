@@ -9,7 +9,7 @@
     <div class="columns">
       <div class="column">
         <p>
-          Ñam tayta ____________ qispiramunña.
+          {{ item1 }}
         </p>
       </div>
     </div>  
@@ -18,7 +18,7 @@
         v-model="checkbox"
       >
         <b-icon icon="pentagon-outline"/>
-        {{ item1 }}
+        {{ item2 }}
       </b-checkbox-button>
     </div>
     <div class="field">
@@ -39,18 +39,37 @@
     </div>
   <div class="buttons">
     <button
+      v-if="checkbox"
       class="button is-success"
       @click="comprobar"
     >
       Comprobar
     </button>
-    <nuxt-link
+    <b-button
+      v-if="!checkbox"
       class="button"
-      to="/prueba1"
+      tag="router-link"
+      to="/"
+      @click="Success"
     >
       Siguiente
-    </nuxt-link>
+    </b-button>
   </div>
+  <b-collapse :open="false" aria-id="ver">
+    <button
+      v-if="checkbox"
+      class="button is-danger"
+      slot="trigger"
+      aria-controls="ver"
+    >
+      Ver Respuesta
+    </button>
+    <div class="notification">
+      <div class="content">
+        <p>Ñam tayta <b>{{ item2 }}</b> qispiramunña</p>
+      </div>
+    </div>
+  </b-collapse><br>
   <b-message title="Instrucción" type="is-info">
     Este es un juego en donde deveras completar la oración con la palabra correcta.
   </b-message>
@@ -63,22 +82,17 @@ import { Toast } from 'buefy/dist/components/toast'
 export default {
  data (){   
    return {
-      met: "",
       checkbox: true,
       checkbox1: true,
       checkbox2: true,
-      checkbox3: true,
-      item1:'inti',
+      item1:'Ñam tayta ____________ qispiramunña',
+      item2:'inti',
       item3:'yaku',
       item4:'warmi',
     }
  },
  methods:{
-   verda(){
-     let f = this.met=="aa"
-     return f
-   },
-   comprobar(){
+   comprobar() {
     let hola= this.checkbox==true? this.item2 : this.item1
     let resp= this.item1.includes(hola);
     let toast= resp== true? this.$toast.open({
@@ -92,14 +106,8 @@ export default {
       })
     return null
    },
-   ocultar1(){
-     return !!this.checkbox==false? true : false 
-   },
-   ocultar2(){
-     return !!this.checkbox1==false? true : false 
-   },
-   ocultar3(){
-     return !!this.checkbox2==false? true : false
+   Success() {
+     this.$snackbar.open(`Gracias por jugar, en hora buena has terminado el tutorial.`)
    }
  }
 }
