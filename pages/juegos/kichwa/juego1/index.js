@@ -9,5 +9,5 @@ export default{
       item3:'Niño',
       item4:'Niña',
     }
-  }
+  },
 }

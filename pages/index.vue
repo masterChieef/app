@@ -23,26 +23,29 @@
         </nuxt-link>
       </div>
       </card>
-
-      <card
-        title="¡Crea un perfil para guardar tu progreso!"
-        icon="account-group"
-      > 
-        <b-button
-          type="is-info"
-          class="button is-primary"
-          @click="loginModal()"
-        >
-          Ingresar
-        </b-button>
-        <b-button
-          type="is-success"
-          class="button is-primary"
-          @click="registerModal()"
-        >
-          Registrarse
-        </b-button>
-      </card>
+      <div
+        v-if="login()"
+      >
+        <card
+          title="¡Crea un perfil para guardar tu progreso!"
+          icon="account-group"
+        > 
+          <b-button
+            type="is-info"
+            class="button is-primary"
+            @click="loginModal()"
+          >
+            Ingresar
+          </b-button>
+          <b-button
+            type="is-success"
+            class="button is-primary"
+            @click="registerModal()"
+          >
+            Registrarse
+          </b-button>
+        </card>
+      </div>  
     </div>
   </section>
 </template>
@@ -51,6 +54,9 @@
 import LoginModal from './login'
 import RegisterModal from './register'
 import Card from '~/components/Card'
+import global  from "../pages/Glov"
+import { NotificationProgrammatic as Notification } from 'buefy/dist/components/notification'
+
 export default {
   name: 'HomePage',
 
@@ -73,7 +79,10 @@ export default {
         hasModalCard: true,
         customClass: 'custom-class custom-class-2'
       })
+    },
+    login(){
+     return global.methods.login()
     }
-  }
+  } 
 }
 </script>

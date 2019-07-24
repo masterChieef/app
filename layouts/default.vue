@@ -61,6 +61,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+import  global  from "../pages/Glov";
 export default {
   data() {
     return {
@@ -79,6 +81,7 @@ export default {
         },
       ]
     }
-  }
+  },
 }
+  
 </script>

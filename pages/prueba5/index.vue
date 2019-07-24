@@ -78,9 +78,11 @@
 <script>
 import { NotificationProgrammatic as Notification } from 'buefy/dist/components/notification'
 import { Toast } from 'buefy/dist/components/toast'
+import Swal from 'sweetalert2'
 
 export default {
- data (){   
+  
+ data (){ 
    return {
       checkbox: true,
       checkbox1: true,
@@ -106,9 +108,8 @@ export default {
       })
     return null
    },
-   Success() {
-     this.$snackbar.open(`Gracias por jugar, en hora buena has terminado el tutorial.`)
-   }
+
+   
  }
 }
 </script>
