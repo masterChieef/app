@@ -1,3 +1,8 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/app/'
+  }
+} : {}
 
 module.exports = {
   mode: 'universal',
@@ -22,6 +27,7 @@ module.exports = {
   /*
   ** Global CSS
   */
+ ...routerBase,
   css: [
   ],
   /*
